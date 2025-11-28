@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo 'Pushing to Docker Hub (Skipping actual push for local assignment)...'
                     // To actually push, you would need credentials configured in Jenkins
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'user', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
                         sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_HUB_USER}/${DOCKER_IMAGE}:${DOCKER_TAG}"
                         sh "docker push ${DOCKER_HUB_USER}/${DOCKER_IMAGE}:${DOCKER_TAG}"
@@ -62,3 +62,4 @@ pipeline {
         }
     }
 }
+
