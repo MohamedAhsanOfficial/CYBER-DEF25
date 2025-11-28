@@ -1,10 +1,14 @@
-version: '3.8'
+version: "3.9"
 
 services:
-  malware-detector:
+  malware_inference:
+    image: mohamedahsan00/malware-detector:latest
+    # add build: . to build from current dir
     build: .
-    image: malware-detector:latest
+    container_name: malware_inference
     volumes:
       - ./network_logs:/input/logs
       - ./output:/output
-    container_name: cyber-def25-inference
+    restart: always
+
+
