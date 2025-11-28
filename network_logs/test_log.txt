@@ -1,0 +1,5 @@
+2025-11-28 10:00:01 INFO Connection established from 192.168.1.5
+2025-11-28 10:00:05 WARN Suspicious activity detected on port 8080
+2025-11-28 10:00:10 INFO User login successful
+2025-11-28 10:00:15 ERROR Malware signature found in packet payload
+2025-11-28 10:00:20 INFO Connection closed

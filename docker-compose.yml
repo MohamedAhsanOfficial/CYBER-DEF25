@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  malware-detector:
+    build: .
+    image: malware-detector:latest
+    volumes:
+      - ./network_logs:/input/logs
+      - ./output:/output
+    container_name: cyber-def25-inference
